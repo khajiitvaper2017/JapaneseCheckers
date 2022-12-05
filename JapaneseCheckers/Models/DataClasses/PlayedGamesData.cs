@@ -15,14 +15,14 @@ public class PlayedGamesData : Data<Game>
     {
         return 1.0f * 1.0f / (1 + 1.0f * Math.Pow(10, 1.0f * (secondRating - firstRating) / 400));
     }
-
+    
     private static void CalculateRating(Game game)
     {
         double firstRating = game.FirstPlayer.Rating;
         double secondRating = game.SecondPlayer.Rating;
 
-        var firstCofficient = (int)(Math.Sqrt(firstRating) / firstRating * 3000);
-        var secondCofficient = (int)(Math.Sqrt(secondRating) / secondRating * 3000);
+        var firstCofficient = 50;
+        var secondCofficient = 50;
 
         var firstProbability = Probability(firstRating, secondRating);
         var secondProbability = Probability(secondRating, firstRating);
@@ -41,8 +41,6 @@ public class PlayedGamesData : Data<Game>
                 firstRating += firstCofficient * (0.5 - firstProbability);
                 secondRating += secondCofficient * (0.5 - secondProbability);
                 break;
-            default:
-                throw new ArgumentOutOfRangeException();
         }
 
         if (firstRating < 100) firstRating = 100;
