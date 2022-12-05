@@ -1,29 +1,35 @@
 ﻿using System;
-using System.Windows.Media;
+using System.Collections.ObjectModel;
 using JapaneseCheckers.ViewModels;
 
 namespace JapaneseCheckers.Models;
 
-internal class Player : MvvmBase
+public class Player : MvvmBase
 {
-    private Color color;
-    private Guid id;
+    private readonly string username;
+    public ObservableCollection<Game> PlayedGames = new();
+    private int rating = 1500;
 
-    public Player(Guid id, Color color)
+    public Player(string username, bool isBot = false)
     {
-        Id = id;
-        Color = color;
+        if (string.IsNullOrWhiteSpace(username))
+            throw new ArgumentException("Username cannot be empty or whitespace", nameof(username));
+
+        Username = username;
+        IsBot = isBot;
     }
 
-    public Guid Id
+    public bool IsBot;
+
+    public string Username
     {
-        get => id;
-        set => Set(ref id, value);
+        get => username;
+        private init => Set(ref username, value);
     }
 
-    public Color Color
+    public int Rating
     {
-        get => color;
-        set => Set(ref color, value);
+        get => rating;
+        set => Set(ref rating, value);
     }
 }

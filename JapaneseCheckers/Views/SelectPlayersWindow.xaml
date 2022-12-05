@@ -1,0 +1,47 @@
+﻿<Window x:Class="JapaneseCheckers.Views.SelectPlayers"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModels="clr-namespace:JapaneseCheckers.ViewModels"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="SelectPlayers" Height="400" Width="400"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Style="{StaticResource MaterialWindowStyle}"
+        x:Name="SelectWindow">
+    <Window.DataContext>
+        <viewModels:SelectPlayersViewModel />
+    </Window.DataContext>
+    <Window.Resources>
+        <DataTemplate x:Key="PlayerItemTemplate">
+            <StackPanel Margin="5">
+                <TextBlock Text="{Binding Path=Username, StringFormat='Name: {0}'}" />
+                <TextBlock Text="{Binding Path=Rating, StringFormat='Rating: {0}'}" />
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+    <Border Background="White" BorderThickness="0" CornerRadius="12" Height="300" Margin="20"
+            VerticalAlignment="Bottom">
+        <Grid Margin="20">
+            <StackPanel Margin="10">
+                <ComboBox materialDesign:HintAssist.Hint="Select player playing with white pieces" Margin="5"
+                          Style="{StaticResource MaterialDesignComboBox}"
+                          ItemTemplate="{StaticResource PlayerItemTemplate}" SelectedItem="{Binding FirstPlayer}"
+                          ItemsSource="{Binding AvailablePlayers}" />
+                <ComboBox materialDesign:HintAssist.Hint="Select player playing with black pieces" Margin="5"
+                          Style="{StaticResource MaterialDesignComboBox}"
+                          ItemTemplate="{StaticResource PlayerItemTemplate}" SelectedItem="{Binding SecondPlayer}"
+                          ItemsSource="{Binding AvailablePlayers}" />
+                <CheckBox Margin="5" Style="{StaticResource MaterialDesignCheckBox}" IsChecked="{Binding OnRating}"
+                          Content="Are we playing on rating?" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                <Button Margin="20" Command="{Binding SelectCommand}"
+                        CommandParameter="{Binding ElementName=SelectWindow}" IsDefault="True" Content="Select" />
+                <Button Margin="20" IsCancel="True" Content="Cancel" />
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

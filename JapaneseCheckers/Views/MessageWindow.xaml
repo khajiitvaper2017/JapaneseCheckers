@@ -1,0 +1,31 @@
+﻿<Window x:Class="JapaneseCheckers.Views.MessageWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Name="MessageInstance"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        Title="{Binding Path=Header}"
+        MinHeight="300" MinWidth="400"
+        MaxHeight="300" MaxWidth="400"
+        Topmost="True"
+        WindowStartupLocation="CenterScreen"
+        Style="{StaticResource MaterialWindowStyle}">
+    <Border Background="White" BorderThickness="1,1,1,1" CornerRadius="12,12,12,12" Margin="20">
+        <Grid>
+            <TextBlock Style="{DynamicResource MaterialDesignHeadline6TextBlock}" VerticalAlignment="Center"
+                       Margin="10,20,10,100"
+                       HorizontalAlignment="Center" TextWrapping="WrapWithOverflow" Text="{Binding Path=Message}" />
+
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="30">
+                <Button Style="{DynamicResource MaterialDesignOutlinedLightButton}"
+                        Click="ButtonBase_OnClick" Background="Transparent" IsDefault="True" Width="100" Margin="10,5"
+                        Content="{Binding Path=OkButtonText}" />
+                <Button Style="{DynamicResource MaterialDesignOutlinedLightButton}"
+                        Background="Transparent" IsCancel="True" IsDefault="True" Width="100" Margin="10,5"
+                        Content="{Binding Path=CancelButtonText}" />
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

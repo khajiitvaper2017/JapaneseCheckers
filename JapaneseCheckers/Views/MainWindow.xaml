@@ -1,0 +1,73 @@
+﻿<Window x:Class="JapaneseCheckers.Views.Main"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModels="clr-namespace:JapaneseCheckers.ViewModels"
+        mc:Ignorable="d"
+        Title="Main"
+        Height="600" Width="400"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Style="{StaticResource MaterialWindowStyle}"
+        Closing="Main_OnClosing">
+    <Window.DataContext>
+        <viewModels:MainViewModel />
+    </Window.DataContext>
+    <Grid>
+        <StackPanel Margin="0,20">
+            
+            <StackPanel Orientation="Horizontal" Height="40" HorizontalAlignment="Center">
+                <Image Source="Resources/whitepiece.png"/>
+                <Image Source="Resources/blackpiece.png"/>
+                <Image Source="Resources/whitepiece.png"/>
+                <Image Source="Resources/blackpiece.png"/>
+                <Image Source="Resources/whitepiece.png"/>
+                <Image Source="Resources/blackpiece.png"/>
+                <Image Source="Resources/whitepiece.png"/>
+                <Image Source="Resources/blackpiece.png"/>
+            </StackPanel>
+            <TextBlock FontSize="40" FontWeight="Bold" TextAlignment="Center" Foreground="White"
+                       TextWrapping="Wrap">
+                Japanese Checkers
+            </TextBlock>
+            <StackPanel Orientation="Horizontal" Height="40" HorizontalAlignment="Center">
+                <Image Source="Resources/blackpiece.png"/>
+                <Image Source="Resources/whitepiece.png"/>
+                <Image Source="Resources/blackpiece.png"/>
+                <Image Source="Resources/whitepiece.png"/>
+                <Image Source="Resources/blackpiece.png"/>
+                <Image Source="Resources/whitepiece.png"/>
+                <Image Source="Resources/blackpiece.png"/>
+                <Image Source="Resources/whitepiece.png"/>
+            </StackPanel>
+        </StackPanel>
+        <Border Background="White" BorderThickness="0" CornerRadius="12" Margin="20" Height="360"
+                VerticalAlignment="Bottom">
+            <StackPanel VerticalAlignment="Center">
+                <Button FontSize="32" Height="50" Command="{Binding StartNewCommand}"
+                        Style="{DynamicResource MaterialDesignRaisedAccentButton}" IsDefault="True" Margin="20,10">
+                    Start New Game
+                </Button>
+                <Button FontSize="32" Height="50" Command="{Binding DisplayPlayersList}"
+                        Style="{DynamicResource MaterialDesignRaisedButton}" IsDefault="True" Margin="20,10">
+                    Players List
+                </Button>
+                <Button FontSize="32" Height="50" Command="{Binding DisplayGamesList}"
+                        Style="{DynamicResource MaterialDesignRaisedButton}" IsDefault="True" Margin="20,10">
+                    Games List
+                </Button>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                    <Button FontSize="32" Height="50" Width="150" Command="{Binding Login}"
+                            Style="{DynamicResource MaterialDesignRaisedButton}" IsDefault="True" Margin="7,7">
+                        Log-in
+                    </Button>
+                    <Button FontSize="32" Height="50" Width="150" Command="{Binding Registration}"
+                            Style="{DynamicResource MaterialDesignRaisedButton}" IsDefault="True" Margin="7,7">
+                        Sign-up
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

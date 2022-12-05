@@ -1,0 +1,33 @@
+﻿<Window x:Class="JapaneseCheckers.Views.Login" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:viewModels="clr-namespace:JapaneseCheckers.ViewModels" mc:Ignorable="d" Title="Login" MinHeight="600"
+        MinWidth="400" MaxHeight="600" MaxWidth="400" WindowStartupLocation="CenterScreen" x:Name="LoginWindow"
+        Style="{StaticResource MaterialWindowStyle}">
+    <Window.DataContext>
+        <viewModels:LoginViewModel />
+    </Window.DataContext>
+    <Border Background="White" BorderThickness="1,1,1,1" CornerRadius="12,12,12,12" Margin="20">
+        <Grid>
+            <TextBlock Margin="0,72,0,0" FontSize="36" FontWeight="Bold" TextAlignment="Center">Sign-in</TextBlock>
+            <StackPanel Margin="16,80,16,16" VerticalAlignment="Center">
+                <TextBox Text="{Binding Username}" materialDesign:HintAssist.Hint="Login"
+                         Background="{DynamicResource MaterialDesignLightBackground}"
+                         Style="{DynamicResource MaterialDesignOutlinedTextBox}" />
+                <PasswordBox Name="PasswordBox" materialDesign:HintAssist.Hint="Password"
+                             Background="{DynamicResource MaterialDesignLightBackground}"
+                             Style="{DynamicResource MaterialDesignOutlinedPasswordBox}" Margin="0,24,0,0" />
+                <Button Command="{Binding Login}" CommandParameter="{Binding ElementName=PasswordBox}"
+                        Style="{DynamicResource MaterialDesignOutlinedLightButton}" IsDefault="True"
+                        Background="Transparent" HorizontalAlignment="Right" Margin="0,24,0,0">
+                    Log-in
+                </Button>
+            </StackPanel>
+            <Button Style="{DynamicResource MaterialDesignPaperButton}" VerticalAlignment="Bottom" Margin="0,0,0,48"
+                    HorizontalAlignment="Center" Height="46" Command="{Binding GoogleLogin}" BorderThickness="0"
+                    Padding="0" Background="Transparent" Content="{StaticResource GoogleIcon}" />
+        </Grid>
+    </Border>
+</Window>

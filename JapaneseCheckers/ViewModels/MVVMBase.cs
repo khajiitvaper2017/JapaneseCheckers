@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 
 namespace JapaneseCheckers.ViewModels;
 
-internal class MvvmBase : INotifyPropertyChanged
+public abstract class MvvmBase : INotifyPropertyChanged
 {
     public event PropertyChangedEventHandler? PropertyChanged;
 

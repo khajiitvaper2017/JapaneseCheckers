@@ -1,9 +1,9 @@
-﻿using System.Collections.ObjectModel;
-using JapaneseCheckers.ViewModels;
+﻿using System;
+using System.Collections.ObjectModel;
 
 namespace JapaneseCheckers.Models;
 
-internal class CellBoard : ObservableCollection<Cell>
+public class CellBoard : ObservableCollection<Cell>, IDisposable
 {
     public const int BoardSize = 10;
 
@@ -11,5 +11,10 @@ internal class CellBoard : ObservableCollection<Cell>
     {
         get => this[row * BoardSize + column];
         set => this[row * BoardSize + column] = value;
+    }
+
+    public void Dispose()
+    {
+        Clear();
     }
 }

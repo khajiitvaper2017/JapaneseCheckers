@@ -10,19 +10,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
+using JapaneseCheckers.ViewModels;
 
 namespace JapaneseCheckers.Views
 {
     /// <summary>
-    /// Логика взаимодействия для CheckersControl.xaml
+    /// Логика взаимодействия для PlayersListWindow.xaml
     /// </summary>
-    public partial class CheckersControl : UserControl
+    public partial class PlayersListWindow : Window
     {
-        public CheckersControl()
+        public PlayersListWindow()
         {
+            
             InitializeComponent();
+        }
+        public PlayersListWindow(MainViewModel mvm) : this()
+        {
+            DataContext = mvm;
         }
     }
 }

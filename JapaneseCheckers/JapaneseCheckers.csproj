@@ -1,24 +1,30 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
-    <UseWPF>true</UseWPF>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net6.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<UseWPF>true</UseWPF>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="Views\Resources\blackpiece.png" />
-    <None Remove="Views\Resources\board.png" />
-    <None Remove="Views\Resources\emptypiece.png" />
-    <None Remove="Views\Resources\whitepiece.png" />
-  </ItemGroup>
+	<ItemGroup>
+		<None Remove="Views\Resources\blackpiece.png" />
+		<None Remove="Views\Resources\board.png" />
+		<None Remove="Views\Resources\google_icon.png" />
+		<None Remove="Views\Resources\nonepiece.png" />
+		<None Remove="Views\Resources\whitepiece.png" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Resource Include="Views\Resources\blackpiece.png" />
-    <Resource Include="Views\Resources\board.png" />
-    <Resource Include="Views\Resources\emptypiece.png" />
-    <Resource Include="Views\Resources\whitepiece.png" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="MaterialDesignThemes" Version="4.6.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Resource Include="Views\Resources\blackpiece.png" />
+		<Resource Include="Views\Resources\board.png" />
+		<Resource Include="Views\Resources\nonepiece.png" />
+		<Resource Include="Views\Resources\google_icon.png" />
+		<Resource Include="Views\Resources\whitepiece.png" />
+	</ItemGroup>
 
 </Project>

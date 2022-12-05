@@ -1,8 +1,8 @@
 ﻿namespace JapaneseCheckers.Models;
 
-internal enum Color
+public enum Color
 {
     White,
     Black,
-    Empty
+    None
 }

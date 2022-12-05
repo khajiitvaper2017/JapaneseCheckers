@@ -3,7 +3,7 @@ using System.Windows.Input;
 
 namespace JapaneseCheckers.ViewModels;
 
-internal class RelayCommand : ICommand
+public class RelayCommand : ICommand
 {
     private readonly Predicate<object>? canExecute;
     private readonly Action<object> execute;
