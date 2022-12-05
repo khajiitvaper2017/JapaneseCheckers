@@ -3,8 +3,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
         xmlns:viewModels="clr-namespace:JapaneseCheckers.ViewModels" xmlns:views="clr-namespace:JapaneseCheckers.Views"
+        xmlns:controls="clr-namespace:JapaneseCheckers.Views.Controls"
         Title="Japanese Checkers" Height="864" Width="800" ResizeMode="NoResize"
         Style="{StaticResource MaterialWindowStyle}" x:Name="GameInstance" Background="#D2D2D2"
+        WindowStartupLocation="CenterScreen"
         Closing="GameWindow_OnClosing">
 
     <Window.DataContext>
@@ -22,6 +24,6 @@
             <TextBlock VerticalAlignment="Center" Margin="20,0,0,0" FontWeight="Bold" FontSize="16"
                        Text="{Binding Path=Status}" />
         </StackPanel>
-        <views:CheckersControl DataContext="{Binding }" Grid.Row="1" />
+        <controls:CheckersControl DataContext="{Binding }" Grid.Row="1" />
     </Grid>
 </Window>

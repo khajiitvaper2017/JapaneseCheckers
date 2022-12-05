@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using JapaneseCheckers.Models.GameClasses;
 using JapaneseCheckers.ViewModels;
 
 namespace JapaneseCheckers.Models;

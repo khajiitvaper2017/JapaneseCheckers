@@ -1,4 +1,6 @@
-﻿namespace JapaneseCheckers.Models;
+﻿using JapaneseCheckers.Models.GameClasses;
+
+namespace JapaneseCheckers.Models.DataClasses;
 
 public class PlayersData : Data<Player>
 {

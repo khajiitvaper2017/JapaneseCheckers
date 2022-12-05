@@ -1,32 +1,20 @@
-﻿using JapaneseCheckers.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
+using JapaneseCheckers.ViewModels;
 
-namespace JapaneseCheckers.Views
+namespace JapaneseCheckers.Views;
+
+/// <summary>
+///     Логика взаимодействия для GamesListWindow.xaml
+/// </summary>
+public partial class GamesListWindow : Window
 {
-    /// <summary>
-    /// Логика взаимодействия для GamesListWindow.xaml
-    /// </summary>
-    public partial class GamesListWindow : Window
+    public GamesListWindow()
     {
-        public GamesListWindow()
-        {
-            InitializeComponent();
-        }
-        public GamesListWindow(MainViewModel mvm) : this()
-        {
-            DataContext = mvm;
-        }
+        InitializeComponent();
+    }
+
+    public GamesListWindow(MainViewModel mvm) : this()
+    {
+        DataContext = mvm;
     }
 }

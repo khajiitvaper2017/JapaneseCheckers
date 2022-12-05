@@ -1,6 +1,7 @@
 ﻿using System;
+using JapaneseCheckers.Models.GameClasses;
 
-namespace JapaneseCheckers.Models;
+namespace JapaneseCheckers.Models.DataClasses;
 
 public class PlayedGamesData : Data<Game>
 {
@@ -17,9 +18,11 @@ public class PlayedGamesData : Data<Game>
 
     private static void CalculateRating(Game game)
     {
-        const int cofficient = 50;
         double firstRating = game.FirstPlayer.Rating;
         double secondRating = game.SecondPlayer.Rating;
+
+        var firstCofficient = (int)(Math.Sqrt(firstRating) / firstRating * 3000);
+        var secondCofficient = (int)(Math.Sqrt(secondRating) / secondRating * 3000);
 
         var firstProbability = Probability(firstRating, secondRating);
         var secondProbability = Probability(secondRating, firstRating);
@@ -27,16 +30,16 @@ public class PlayedGamesData : Data<Game>
         switch (game.Result)
         {
             case Color.White:
-                firstRating += cofficient * (1 - firstProbability);
-                secondRating += cofficient * (0 - secondProbability);
+                firstRating += firstCofficient * (1 - firstProbability);
+                secondRating += secondCofficient * (0 - secondProbability);
                 break;
             case Color.Black:
-                firstRating += cofficient * (0 - firstProbability);
-                secondRating += cofficient * (1 - secondProbability);
+                firstRating += firstCofficient * (0 - firstProbability);
+                secondRating += secondCofficient * (1 - secondProbability);
                 break;
             case Color.None:
-                firstRating += cofficient * (0.5 - firstProbability);
-                secondRating += cofficient * (0.5 - secondProbability);
+                firstRating += firstCofficient * (0.5 - firstProbability);
+                secondRating += secondCofficient * (0.5 - secondProbability);
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
@@ -44,7 +47,11 @@ public class PlayedGamesData : Data<Game>
 
         if (firstRating < 100) firstRating = 100;
         if (secondRating < 100) secondRating = 100;
+        var firstChange = (int)firstRating - game.FirstPlayer.Rating;
+        var secondChange = (int)secondRating - game.SecondPlayer.Rating;
         game.FirstPlayer.Rating = Convert.ToInt32(Math.Round(firstRating * 1000000.0) / 1000000.0);
         game.SecondPlayer.Rating = Convert.ToInt32(Math.Round(secondRating * 1000000.0) / 1000000.0);
+        game.FirstRatingChange = firstChange;
+        game.SecondRatingChange = secondChange;
     }
 }

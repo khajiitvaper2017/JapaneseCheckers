@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Windows.Controls;
 using JapaneseCheckers.Models;
+using JapaneseCheckers.Models.Services;
 using JapaneseCheckers.Views;
 
 namespace JapaneseCheckers.ViewModels;

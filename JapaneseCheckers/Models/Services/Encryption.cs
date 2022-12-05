@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace JapaneseCheckers.Models;
+namespace JapaneseCheckers.Models.Services;
 
 internal static class Encryption
 {

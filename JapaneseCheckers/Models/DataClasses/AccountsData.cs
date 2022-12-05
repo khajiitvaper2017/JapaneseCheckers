@@ -1,6 +1,7 @@
 ﻿using System.Linq;
+using JapaneseCheckers.Models.Services;
 
-namespace JapaneseCheckers.Models;
+namespace JapaneseCheckers.Models.DataClasses;
 
 public record Account(string Username, string Email, string PasswordHash);
 

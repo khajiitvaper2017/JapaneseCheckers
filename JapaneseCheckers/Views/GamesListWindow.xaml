@@ -3,25 +3,30 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:JapaneseCheckers.Views"
-        xmlns:viewModels="clr-namespace:JapaneseCheckers.ViewModels"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="PlayersListWindow" Height="450" Width="800"
+        Title="PlayersListWindow" Height="500" MinWidth="1000" MaxWidth="1000"
         WindowStartupLocation="CenterScreen"
         Style="{StaticResource MaterialWindowStyle}">
-    <Border Background="White" BorderThickness="0" CornerRadius="12" Margin="20" Height="360"
-            VerticalAlignment="Top">
-        <StackPanel Margin="20">
+    <Border Background="White" BorderThickness="0" CornerRadius="12" Margin="20"
+            VerticalAlignment="Stretch">
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="32" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
             <TextBlock Margin="5">List of played games: </TextBlock>
-            <DataGrid  IsReadOnly="True" ItemsSource="{Binding PlayedGamesData.Collection, Mode=OneWay }" AutoGenerateColumns="False" Margin="5">
+            <DataGrid Grid.Row="1" IsReadOnly="True" ItemsSource="{Binding PlayedGamesData.Collection, Mode=OneWay }"
+                      AutoGenerateColumns="False" Margin="5">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="White Player" Binding="{Binding FirstPlayer.Username, Mode=OneWay}" />
                     <DataGridTextColumn Header="Black Player" Binding="{Binding SecondPlayer.Username, Mode=OneWay}" />
                     <DataGridTextColumn Header="Winning side" Binding="{Binding Result, Mode=OneWay}" />
                     <DataGridTextColumn Header="Rating game" Binding="{Binding PlayedOnRating, Mode=OneWay}" />
+                    <DataGridTextColumn Header="White rating change" Binding="{Binding FirstRatingChange, Mode=OneWay}" />
+                    <DataGridTextColumn Header="Black rating change"
+                                        Binding="{Binding SecondRatingChange, Mode=OneWay}" />
                 </DataGrid.Columns>
             </DataGrid>
-        </StackPanel>
+        </Grid>
     </Border>
 </Window>

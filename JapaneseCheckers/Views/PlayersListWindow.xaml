@@ -3,28 +3,28 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:JapaneseCheckers.Views"
-        xmlns:viewModels="clr-namespace:JapaneseCheckers.ViewModels"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="PlayersListWindow" Height="450" Width="400"
+        Title="PlayersListWindow" MinHeight="450" MinWidth="400" MaxWidth="450"
         WindowStartupLocation="CenterScreen"
         Style="{StaticResource MaterialWindowStyle}">
     <Border Background="White" BorderThickness="0" CornerRadius="12" Margin="20"
-        VerticalAlignment="Stretch">
-        
-        <Grid>
+            VerticalAlignment="Stretch">
+
+        <Grid Margin="20">
             <Grid.RowDefinitions>
-                <RowDefinition Height="180"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="32" />
+                <RowDefinition Height="130" />
+                <RowDefinition Height="32" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <StackPanel Margin="20">
-                <TextBlock Margin="5">List of bots: </TextBlock>
-                <DataGrid IsReadOnly="True" Margin="5" ItemsSource="{Binding BotsData.Collection, Mode=OneWay }" AutoGeneratingColumn="DataGrid_OnAutoGeneratingColumn"  AutoGenerateColumns="True"/>
-            </StackPanel>
-            <StackPanel Grid.Row="1" Margin="20">
-                <TextBlock Margin="5">List of players: </TextBlock>
-                <DataGrid IsReadOnly="True"  ItemsSource="{Binding PlayersData.Collection, Mode=OneWay }" AutoGenerateColumns="True" AutoGeneratingColumn="DataGrid_OnAutoGeneratingColumn"  Margin="5"/></StackPanel>
+            <TextBlock Margin="5">List of bots: </TextBlock>
+            <DataGrid Grid.Row="1" IsReadOnly="True" Margin="5"
+                      ItemsSource="{Binding BotsData.Collection, Mode=OneWay }"
+                      AutoGeneratingColumn="DataGrid_OnAutoGeneratingColumn" AutoGenerateColumns="True" />
+
+            <TextBlock Grid.Row="2" Margin="5">List of players: </TextBlock>
+            <DataGrid IsReadOnly="True" Grid.Row="3" ItemsSource="{Binding PlayersData.Collection, Mode=OneWay }"
+                      AutoGenerateColumns="True" AutoGeneratingColumn="DataGrid_OnAutoGeneratingColumn" Margin="5" />
         </Grid>
-        </Border>
+    </Border>
 </Window>

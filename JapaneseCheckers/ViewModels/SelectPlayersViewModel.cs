@@ -1,6 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.Linq;
 using JapaneseCheckers.Models;
+using JapaneseCheckers.Models.GameClasses;
 using JapaneseCheckers.Views;
 
 namespace JapaneseCheckers.ViewModels;

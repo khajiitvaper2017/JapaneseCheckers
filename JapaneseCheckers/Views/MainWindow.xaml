@@ -16,30 +16,30 @@
     </Window.DataContext>
     <Grid>
         <StackPanel Margin="0,20">
-            
+
             <StackPanel Orientation="Horizontal" Height="40" HorizontalAlignment="Center">
-                <Image Source="Resources/whitepiece.png"/>
-                <Image Source="Resources/blackpiece.png"/>
-                <Image Source="Resources/whitepiece.png"/>
-                <Image Source="Resources/blackpiece.png"/>
-                <Image Source="Resources/whitepiece.png"/>
-                <Image Source="Resources/blackpiece.png"/>
-                <Image Source="Resources/whitepiece.png"/>
-                <Image Source="Resources/blackpiece.png"/>
+                <Image Source="Resources/whitepiece.png" />
+                <Image Source="Resources/blackpiece.png" />
+                <Image Source="Resources/whitepiece.png" />
+                <Image Source="Resources/blackpiece.png" />
+                <Image Source="Resources/whitepiece.png" />
+                <Image Source="Resources/blackpiece.png" />
+                <Image Source="Resources/whitepiece.png" />
+                <Image Source="Resources/blackpiece.png" />
             </StackPanel>
             <TextBlock FontSize="40" FontWeight="Bold" TextAlignment="Center" Foreground="White"
                        TextWrapping="Wrap">
                 Japanese Checkers
             </TextBlock>
             <StackPanel Orientation="Horizontal" Height="40" HorizontalAlignment="Center">
-                <Image Source="Resources/blackpiece.png"/>
-                <Image Source="Resources/whitepiece.png"/>
-                <Image Source="Resources/blackpiece.png"/>
-                <Image Source="Resources/whitepiece.png"/>
-                <Image Source="Resources/blackpiece.png"/>
-                <Image Source="Resources/whitepiece.png"/>
-                <Image Source="Resources/blackpiece.png"/>
-                <Image Source="Resources/whitepiece.png"/>
+                <Image Source="Resources/blackpiece.png" />
+                <Image Source="Resources/whitepiece.png" />
+                <Image Source="Resources/blackpiece.png" />
+                <Image Source="Resources/whitepiece.png" />
+                <Image Source="Resources/blackpiece.png" />
+                <Image Source="Resources/whitepiece.png" />
+                <Image Source="Resources/blackpiece.png" />
+                <Image Source="Resources/whitepiece.png" />
             </StackPanel>
         </StackPanel>
         <Border Background="White" BorderThickness="0" CornerRadius="12" Margin="20" Height="360"

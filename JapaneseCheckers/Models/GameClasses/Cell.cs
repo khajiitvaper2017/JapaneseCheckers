@@ -1,6 +1,6 @@
 ﻿using JapaneseCheckers.ViewModels;
 
-namespace JapaneseCheckers.Models;
+namespace JapaneseCheckers.Models.GameClasses;
 
 public class Cell : MvvmBase
 {

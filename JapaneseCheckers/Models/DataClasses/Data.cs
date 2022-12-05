@@ -4,11 +4,18 @@ using System.IO;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace JapaneseCheckers.Models;
+namespace JapaneseCheckers.Models.DataClasses;
 
 public class Data<T> : IDisposable
 {
-    private const string path = "";
+    private const string path = "Data/";
+
+    private readonly JsonSerializerOptions options = new()
+    {
+        WriteIndented = true,
+        DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
+        IncludeFields = false
+    };
 
     public Data()
     {
@@ -28,24 +35,22 @@ public class Data<T> : IDisposable
         ReleaseUnmanagedResources();
     }
 
-    private void Save()
+    protected void Save()
     {
+        
         var name = GetType().Name;
+        System.IO.Directory.CreateDirectory(path);
         using var fs = new FileStream($"{path}{name}.json", FileMode.OpenOrCreate);
-        JsonSerializer.Serialize(fs, Collection,new JsonSerializerOptions
-        {
-            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
-            
-        });
+        JsonSerializer.Serialize(fs, Collection, options);
     }
 
-    private ObservableCollection<T> Load()
+    protected ObservableCollection<T> Load()
     {
         try
         {
             var name = GetType().Name;
             using var fs = new FileStream($"{path}{name}.json", FileMode.OpenOrCreate);
-            return JsonSerializer.Deserialize<ObservableCollection<T>>(fs);
+            return JsonSerializer.Deserialize<ObservableCollection<T>>(fs, options)!;
         }
         catch
         {
@@ -53,7 +58,7 @@ public class Data<T> : IDisposable
         }
     }
 
-    private void ReleaseUnmanagedResources()
+    protected void ReleaseUnmanagedResources()
     {
         Save();
         Collection.Clear();

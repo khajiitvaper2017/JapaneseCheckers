@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using JapaneseCheckers.Models;
+using JapaneseCheckers.Models.GameClasses;
 using JapaneseCheckers.Views;
 
 namespace JapaneseCheckers.ViewModels;
@@ -108,13 +109,14 @@ internal class CheckersViewModel : MvvmBase
 
     private void Game_GameEnded()
     {
-        var prevRating = game.Result == Color.White ? FirstPlayer.Rating : SecondPlayer.Rating;
         var endedGame = new Game(FirstPlayer, SecondPlayer, game.Result, PlayedOnRating);
         MainViewModel.PlayedGamesData.AddGame(endedGame);
         Status = game.Result switch
         {
-            Color.White => $"{FirstPlayer.Username} won! His rating increased by {FirstPlayer.Rating - prevRating}",
-            Color.Black => $"{SecondPlayer.Username} won! His rating increased by {SecondPlayer.Rating - prevRating}",
+            Color.White =>
+                $"{FirstPlayer.Username} won!{(endedGame.FirstRatingChange != 0 ? $" His rating increased by {endedGame.FirstRatingChange}" : "")}",
+            Color.Black =>
+                $"{SecondPlayer.Username} won!{(endedGame.SecondRatingChange != 0 ? $" His rating increased by {endedGame.SecondRatingChange}" : "")}",
             Color.None => "Draw!",
             _ => throw new ArgumentOutOfRangeException()
         };

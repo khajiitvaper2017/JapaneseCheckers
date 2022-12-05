@@ -1,17 +1,14 @@
 ﻿using System;
-using System.Collections.ObjectModel;
 using System.Text.Json.Serialization;
 using JapaneseCheckers.ViewModels;
 
-namespace JapaneseCheckers.Models;
+namespace JapaneseCheckers.Models.GameClasses;
 
 public class Player : MvvmBase
 {
-    private readonly string username;
+    [JsonIgnore] protected readonly string username;
 
-    [JsonIgnore] 
-    public bool IsBot { get; set; } = false;
-    private int rating = 1500;
+    [JsonIgnore] protected int rating = 1500;
 
     public Player(string username, bool isBot = false)
     {
@@ -21,6 +18,8 @@ public class Player : MvvmBase
         Username = username;
         IsBot = isBot;
     }
+
+    [JsonIgnore] public bool IsBot { get; set; }
 
     public string Username
     {

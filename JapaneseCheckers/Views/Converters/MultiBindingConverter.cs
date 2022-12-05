@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Windows.Data;
 
-namespace JapaneseCheckers.Views;
+namespace JapaneseCheckers.Views.Converters;
 
 internal class MultiBindingConverter : IMultiValueConverter
 {

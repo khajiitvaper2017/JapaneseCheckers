@@ -1,4 +1,4 @@
-﻿namespace JapaneseCheckers.Models;
+﻿namespace JapaneseCheckers.Models.GameClasses;
 
 public enum Color
 {

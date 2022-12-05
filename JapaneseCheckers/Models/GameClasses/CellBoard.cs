@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 
-namespace JapaneseCheckers.Models;
+namespace JapaneseCheckers.Models.GameClasses;
 
 public class CellBoard : ObservableCollection<Cell>, IDisposable
 {

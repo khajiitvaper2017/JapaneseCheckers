@@ -6,9 +6,9 @@ using System.Net.Http.Headers;
 using System.Net.Sockets;
 using System.Text;
 using JapaneseCheckers.ViewModels;
-using static JapaneseCheckers.Models.Encryption;
+using static JapaneseCheckers.Models.Services.Encryption;
 
-namespace JapaneseCheckers.Models;
+namespace JapaneseCheckers.Models.Services;
 
 public class GoogleAuth : MvvmBase
 {
