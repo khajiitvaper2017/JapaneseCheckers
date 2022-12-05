@@ -37,11 +37,18 @@ public class Data<T> : IDisposable
 
     protected void Save()
     {
-        
-        var name = GetType().Name;
-        System.IO.Directory.CreateDirectory(path);
-        using var fs = new FileStream($"{path}{name}.json", FileMode.OpenOrCreate);
-        JsonSerializer.Serialize(fs, Collection, options);
+        try
+        {
+
+            var name = GetType().Name;
+            Directory.CreateDirectory(path);
+            using var fs = new FileStream($"{path}{name}.json", FileMode.OpenOrCreate);
+            JsonSerializer.Serialize(fs, Collection, options);
+        }
+        catch (Exception)
+        {
+            //
+        }
     }
 
     protected ObservableCollection<T> Load()

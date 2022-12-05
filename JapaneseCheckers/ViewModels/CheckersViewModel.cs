@@ -16,7 +16,7 @@ internal class CheckersViewModel : MvvmBase
 
     public CheckersViewModel()
     {
-        ClickCommand = new RelayCommand(SetCell, obj => !game.IsGameEnded);
+        ClickCommand = new RelayCommand(SetCell, _ => !game.IsGameEnded);
         ExitCommand = new RelayCommand(Exit);
         SetupNewGame();
         game.PropertyChanged += Game_PropertyChanged;

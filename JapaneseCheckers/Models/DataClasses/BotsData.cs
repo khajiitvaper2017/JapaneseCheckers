@@ -31,12 +31,12 @@ public class BotsData : Data<Bot>
             return cell1;
         }
 
-        (Collection[0] as Bot).CalculateMove = (board) =>
+        Collection[0].CalculateMove = (board) =>
         {
             var cell = GetRandomCell(board);
             return (cell.Row, cell.Col);
         };
-        var bot = Collection[1] as Bot;
+        var bot = Collection[1];
         bot.CalculateMove = (board) =>
         {
             var move = (0, 0);

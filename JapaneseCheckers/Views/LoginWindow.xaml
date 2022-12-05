@@ -3,8 +3,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        xmlns:viewModels="clr-namespace:JapaneseCheckers.ViewModels" mc:Ignorable="d" Title="Login" MinHeight="600"
-        MinWidth="400" MaxHeight="600" MaxWidth="400" WindowStartupLocation="CenterScreen" x:Name="LoginWindow"
+        xmlns:viewModels="clr-namespace:JapaneseCheckers.ViewModels" mc:Ignorable="d" Title="Login" 
+        ResizeMode="NoResize"
+        Height="600" 
+        Width="400" 
+        WindowStartupLocation="CenterScreen" x:Name="LoginWindow"
         Style="{StaticResource MaterialWindowStyle}">
     <Window.DataContext>
         <viewModels:LoginViewModel />
