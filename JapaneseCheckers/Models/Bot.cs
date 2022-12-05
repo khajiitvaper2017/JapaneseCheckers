@@ -1,13 +1,15 @@
 ﻿using System;
+using System.Text.Json.Serialization;
 
 namespace JapaneseCheckers.Models;
 
 public class Bot : Player
 {
-    public Bot(string username, Func<CellBoard, (int, int)> calculate) : base(username, true)
+    public Bot(string username, Func<CellBoard, (int, int)>? calculate = null) : base(username, true)
     {
-        CalculateMove = calculate;
+        if(calculate is not null)
+            CalculateMove = calculate;
     }
-
-    public Func<CellBoard, (int, int)> CalculateMove;
+    [JsonIgnore]
+    public Func<CellBoard, (int, int)>? CalculateMove;
 }

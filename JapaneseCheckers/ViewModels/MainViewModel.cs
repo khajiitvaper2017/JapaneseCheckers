@@ -32,7 +32,7 @@ namespace JapaneseCheckers.ViewModels
 
         private void DisplayGamesListClick(object obj)
         {
-            throw new NotImplementedException();
+            new GamesListWindow(this).ShowDialog();
         }
 
         public RelayCommand Login { get; }
@@ -56,12 +56,18 @@ namespace JapaneseCheckers.ViewModels
                 return cell1;
             }
 
-            BotsData.AddBot("Random Bot", (board) =>
+            if (BotsData.Collection.Count == 0)
+            {
+                BotsData.Collection.Add(new Bot("Random Bot"));
+                BotsData.Collection.Add(new Bot("Smarter Bot"));
+            }
+            (BotsData.Collection[0] as Bot).CalculateMove =(board) =>
             {
                 var cell = GetRandomCell(board);
                 return (cell.Row, cell.Col);
-            });
-            BotsData.AddBot("Smarter Bot", (board) =>
+            };
+            var bot = BotsData.Collection[1] as Bot;
+            bot.CalculateMove =(board) =>
             {
                 var move = (0, 0);
                 var qual = 0;
@@ -177,7 +183,7 @@ namespace JapaneseCheckers.ViewModels
                 if (qual != 0) return move;
                 var cell = GetRandomCell(board);
                 return (cell.Row, cell.Col);
-            });
+            };
         }
 
         private void StartNewClick(object obj)
@@ -213,6 +219,7 @@ namespace JapaneseCheckers.ViewModels
             AccountsData.Dispose();
             PlayersData.Dispose();
             PlayedGamesData.Dispose();
+            BotsData.Dispose();
         }
 
         ~MainViewModel()

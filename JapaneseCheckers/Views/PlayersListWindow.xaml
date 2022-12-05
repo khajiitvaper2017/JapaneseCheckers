@@ -7,16 +7,24 @@
         xmlns:viewModels="clr-namespace:JapaneseCheckers.ViewModels"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="PlayersListWindow" Height="450" Width="800"
+        Title="PlayersListWindow" Height="450" Width="400"
         WindowStartupLocation="CenterScreen"
         Style="{StaticResource MaterialWindowStyle}">
-    <Border Background="White" BorderThickness="0" CornerRadius="12" Margin="20" Height="360"
-            VerticalAlignment="Top">
-        <StackPanel Margin="20">
-            <TextBlock Margin="5">List of players: </TextBlock>
-            <DataGrid  ItemsSource="{Binding PlayersData.Collection, Mode=OneWay }" AutoGenerateColumns="True" Margin="5"/>
-            <TextBlock Margin="5">List of bots: </TextBlock>
-            <DataGrid Margin="5" ItemsSource="{Binding BotsData.Collection, Mode=OneWay }" AutoGenerateColumns="True"/>
-        </StackPanel>
+    <Border Background="White" BorderThickness="0" CornerRadius="12" Margin="20"
+        VerticalAlignment="Stretch">
+        
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="180"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Margin="20">
+                <TextBlock Margin="5">List of bots: </TextBlock>
+                <DataGrid IsReadOnly="True" Margin="5" ItemsSource="{Binding BotsData.Collection, Mode=OneWay }" AutoGeneratingColumn="DataGrid_OnAutoGeneratingColumn"  AutoGenerateColumns="True"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Margin="20">
+                <TextBlock Margin="5">List of players: </TextBlock>
+                <DataGrid IsReadOnly="True"  ItemsSource="{Binding PlayersData.Collection, Mode=OneWay }" AutoGenerateColumns="True" AutoGeneratingColumn="DataGrid_OnAutoGeneratingColumn"  Margin="5"/></StackPanel>
+        </Grid>
         </Border>
 </Window>

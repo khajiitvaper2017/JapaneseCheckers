@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JapaneseCheckers.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,31 +12,21 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using JapaneseCheckers.ViewModels;
 
 namespace JapaneseCheckers.Views
 {
     /// <summary>
-    /// Логика взаимодействия для PlayersListWindow.xaml
+    /// Логика взаимодействия для GamesListWindow.xaml
     /// </summary>
-    public partial class PlayersListWindow : Window
+    public partial class GamesListWindow : Window
     {
-        public PlayersListWindow()
+        public GamesListWindow()
         {
-            
             InitializeComponent();
         }
-        public PlayersListWindow(MainViewModel mvm) : this()
+        public GamesListWindow(MainViewModel mvm) : this()
         {
             DataContext = mvm;
-        }
-
-        private void DataGrid_OnAutoGeneratingColumn(object? sender, DataGridAutoGeneratingColumnEventArgs e)
-        {
-            if (e.PropertyName == "IsBot")
-            {
-                e.Cancel = true;
-            }
         }
     }
 }

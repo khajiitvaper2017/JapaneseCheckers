@@ -7,8 +7,6 @@ public class PlayedGamesData : Data<Game>
     public void AddGame(Game game)
     {
         if (game.PlayedOnRating) CalculateRating(game);
-        game.FirstPlayer.PlayedGames.Add(game);
-        game.SecondPlayer.PlayedGames.Add(game);
         Collection.Add(game);
     }
 

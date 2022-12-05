@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Text.Json.Serialization;
 using JapaneseCheckers.ViewModels;
 
 namespace JapaneseCheckers.Models;
@@ -7,7 +8,9 @@ namespace JapaneseCheckers.Models;
 public class Player : MvvmBase
 {
     private readonly string username;
-    public ObservableCollection<Game> PlayedGames = new();
+
+    [JsonIgnore] 
+    public bool IsBot { get; set; } = false;
     private int rating = 1500;
 
     public Player(string username, bool isBot = false)
@@ -18,8 +21,6 @@ public class Player : MvvmBase
         Username = username;
         IsBot = isBot;
     }
-
-    public bool IsBot;
 
     public string Username
     {

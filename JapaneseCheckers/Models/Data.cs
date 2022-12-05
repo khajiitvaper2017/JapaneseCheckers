@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace JapaneseCheckers.Models;
 
@@ -31,7 +32,11 @@ public class Data<T> : IDisposable
     {
         var name = GetType().Name;
         using var fs = new FileStream($"{path}{name}.json", FileMode.OpenOrCreate);
-        JsonSerializer.Serialize(fs, Collection);
+        JsonSerializer.Serialize(fs, Collection,new JsonSerializerOptions
+        {
+            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
+            
+        });
     }
 
     private ObservableCollection<T> Load()
@@ -51,6 +56,6 @@ public class Data<T> : IDisposable
     private void ReleaseUnmanagedResources()
     {
         Save();
-        Collection?.Clear();
+        Collection.Clear();
     }
 }
