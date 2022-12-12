@@ -8,14 +8,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<None Remove="Views\Resources\blackpiece.png" />
-		<None Remove="Views\Resources\board.png" />
-		<None Remove="Views\Resources\google_icon.png" />
-		<None Remove="Views\Resources\nonepiece.png" />
-		<None Remove="Views\Resources\whitepiece.png" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<PackageReference Include="MaterialDesignThemes" Version="4.6.1" />
 	</ItemGroup>
 

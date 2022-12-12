@@ -5,11 +5,11 @@ using System.Windows;
 namespace JapaneseCheckers.Views;
 
 /// <summary>
-///     Логика взаимодействия для Main.xaml
+///     Логика взаимодействия для MainWindow.xaml
 /// </summary>
-public partial class Main : Window
+public partial class MainWindow : Window
 {
-    public Main()
+    public MainWindow()
     {
         InitializeComponent();
     }

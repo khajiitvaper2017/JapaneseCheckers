@@ -3,11 +3,11 @@
 namespace JapaneseCheckers.Views;
 
 /// <summary>
-///     Interaction logic for Registration.xaml
+///     Interaction logic for RegistrationWindow.xaml
 /// </summary>
-public partial class Registration : Window
+public partial class RegistrationWindow : Window
 {
-    public Registration()
+    public RegistrationWindow()
     {
         InitializeComponent();
     }

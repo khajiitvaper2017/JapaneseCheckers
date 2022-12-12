@@ -55,6 +55,9 @@ internal class JapaneseCheckers : MvvmBase
     internal void SetCell(Cell cell)
     {
         if (isGameEnded) return;
+        if (!Board[cell.Row, cell.Col].IsFree) return;
+
+
         Board[cell.Row, cell.Col].Color = WhoseTurn();
         Board[cell.Row, cell.Col].IsFree = false;
         if (CheckForWin())
@@ -80,6 +83,7 @@ internal class JapaneseCheckers : MvvmBase
 
     private bool CheckForWin()
     {
+        var currentColor = WhoseTurn();
         int[][] directions =
         {
             new[] { 1, 0 },
@@ -94,17 +98,16 @@ internal class JapaneseCheckers : MvvmBase
             for (var x = 0; x < CellBoard.BoardSize; x++)
             for (var y = 0; y < CellBoard.BoardSize; y++)
             {
+                if (Board[x, y].Color != currentColor) continue;
                 var lastx = x + 4 * dx;
                 var lasty = y + 4 * dy;
                 if (lastx is < 0 or >= CellBoard.BoardSize ||
                     lasty is < 0 or >= CellBoard.BoardSize) continue;
 
-                var w = Board[x, y].Color;
-                if (w == Color.None) continue;
-                if (w == Board[x + dx, y + dy].Color
-                    && w == Board[x + 2 * dx, y + 2 * dy].Color
-                    && w == Board[x + 3 * dx, y + 3 * dy].Color
-                    && w == Board[lastx, lasty].Color)
+                if (currentColor == Board[x + dx, y + dy].Color
+                    && currentColor == Board[x + 2 * dx, y + 2 * dy].Color
+                    && currentColor == Board[x + 3 * dx, y + 3 * dy].Color
+                    && currentColor == Board[lastx, lasty].Color)
                     return true;
             }
         }

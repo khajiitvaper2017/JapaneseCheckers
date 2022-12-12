@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using JapaneseCheckers.Models;
 using JapaneseCheckers.Models.DataClasses;
 using JapaneseCheckers.Views;
 
@@ -48,7 +47,7 @@ public class MainViewModel : MvvmBase, IDisposable
 
     private void StartNewClick(object obj)
     {
-        var result = new SelectPlayers();
+        var result = new SelectPlayersWindow();
         if (result.ShowDialog() == false) return;
 
         var data = result.DataContext as SelectPlayersViewModel;
@@ -66,12 +65,12 @@ public class MainViewModel : MvvmBase, IDisposable
 
     private void LoginClick(object sender)
     {
-        new Login().ShowDialog();
+        new LoginWindow().ShowDialog();
     }
 
     private void RegistrationClick(object sender)
     {
-        new Registration().ShowDialog();
+        new RegistrationWindow().ShowDialog();
     }
 
     private void ReleaseUnmanagedResources()

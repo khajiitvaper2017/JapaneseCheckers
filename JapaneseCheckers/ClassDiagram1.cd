@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="JapaneseCheckers.Models.DataClasses.AccountsData" Collapsed="true">
+    <Position X="1.75" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASAEAAAAA=</HashCode>
+      <FileName>Models\DataClasses\AccountsData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JapaneseCheckers.Models.DataClasses.BotsData" Collapsed="true">
+    <Position X="6.25" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Models\DataClasses\BotsData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JapaneseCheckers.Models.DataClasses.Data&lt;T&gt;" Collapsed="true">
+    <Position X="5" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAgIACACAAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\DataClasses\Data.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="JapaneseCheckers.Models.DataClasses.PlayedGamesData" Collapsed="true">
+    <Position X="4" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAIAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\DataClasses\PlayedGamesData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JapaneseCheckers.Models.DataClasses.PlayersData" Collapsed="true">
+    <Position X="8.5" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Models\DataClasses\PlayersData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JapaneseCheckers.Models.GameClasses.Bot" Collapsed="true">
+    <Position X="1.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\GameClasses\Bot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JapaneseCheckers.Models.GameClasses.Player" Collapsed="true">
+    <Position X="1.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAEAAQAAAAEAAAAIAAAAAAA=</HashCode>
+      <FileName>Models\GameClasses\Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JapaneseCheckers.ViewModels.CheckersViewModel" Collapsed="true">
+    <Position X="4" Y="8.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQNAgAEAAAAAAAAAEBAAAAAAIkAAACoIAAAoAAAAQA=</HashCode>
+      <FileName>ViewModels\CheckersViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JapaneseCheckers.ViewModels.LoginViewModel" Collapsed="true">
+    <Position X="11.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAgAAAAAAAACQAAAAEAAAAAAAAAAAARAAAAAAA=</HashCode>
+      <FileName>ViewModels\LoginViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JapaneseCheckers.ViewModels.MainViewModel" Collapsed="true">
+    <Position X="10.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAkAAAACACAAABgAkAAgAAABAAAAAAABRgAQAAAEAIA=</HashCode>
+      <FileName>ViewModels\MainViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="JapaneseCheckers.ViewModels.MvvmBase" Collapsed="true">
+    <Position X="8" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAIAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\MVVMBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="JapaneseCheckers.ViewModels.RegistrationViewModel" Collapsed="true">
+    <Position X="5.25" Y="9.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAgAQAAAAEAAAABAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>ViewModels\RegistrationViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JapaneseCheckers.ViewModels.RelayCommand" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="21.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAQAAEAEAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\RelayCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="JapaneseCheckers.ViewModels.SelectPlayersViewModel" Collapsed="true">
+    <Position X="6.5" Y="8.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAgAAAIJAAAAAAAAAAAAAABQAACAQA=</HashCode>
+      <FileName>ViewModels\SelectPlayersViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JapaneseCheckers.Models.JapaneseCheckers" Collapsed="true">
+    <Position X="8" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAQEAAAAIIAAACAAQAAEAAAAAAIAAAACACAQA=</HashCode>
+      <FileName>Models\JapaneseCheckers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JapaneseCheckers.Models.Services.Encryption" Collapsed="true">
+    <Position X="21.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEABAAA=</HashCode>
+      <FileName>Models\Services\Encryption.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JapaneseCheckers.Models.Services.GoogleAuth" Collapsed="true">
+    <Position X="9.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAAAACABEAAAABAAgAAAAFCAAAA=</HashCode>
+      <FileName>Models\Services\GoogleAuth.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JapaneseCheckers.Views.Controls.CheckersControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Controls\CheckersControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="JapaneseCheckers.Views.GamesListWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13.5" Y="4.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\GamesListWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="JapaneseCheckers.Views.GameWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\GameWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="JapaneseCheckers.Views.LoginWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\LoginWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JapaneseCheckers.Views.MainWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="15.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JapaneseCheckers.Views.MessageWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAQACAAAAAAAAAAAAAAAAAAAAAAAAAAAAIACAAAA=</HashCode>
+      <FileName>Views\MessageWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="JapaneseCheckers.Views.PlayersListWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\PlayersListWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="JapaneseCheckers.Views.RegistrationWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.25" Y="4.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\RegistrationWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JapaneseCheckers.Views.SelectPlayersWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\SelectPlayersWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JapaneseCheckers.Views.Converters.MultiBindingConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="23.5" Y="0.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\Converters\MultiBindingConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="System.Windows.Window" Collapsed="true">
+    <Position X="11.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Windows.Controls.UserControl" Collapsed="true">
+    <Position X="19.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Windows.Controls.ContentControl" Collapsed="true">
+    <Position X="15.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Delegate Name="JapaneseCheckers.Models.Message" Collapsed="true">
+    <Position X="21.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\JapaneseCheckers.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -67,79 +67,55 @@ public class BotsData : Data<Bot>
                                 {
                                     if (w == board[x + 3 * dx, y + 3 * dy].Color)
                                     {
-                                        if (board[x + 4 * dx, y + 4 * dy].IsFree)
+                                        if (board[x + 4 * dx, y + 4 * dy].IsFree && qual < 4)
                                         {
-                                            if (qual < 4)
-                                            {
-                                                qual = 4;
-                                                move = (x + 4 * dx, y + 4 * dy);
-                                            }
+                                            qual = 4;
+                                            move = (x + 4 * dx, y + 4 * dy);
                                         }
 
-                                        if (board[x - dx, y - dy].IsFree)
+                                        if (board[x - dx, y - dy].IsFree && qual < 4)
                                         {
-                                            if (qual < 4)
-                                            {
-                                                qual = 4;
-                                                move = (x - dx, y - dy);
-                                            }
-                                        }
-                                    }
-
-                                    if (board[x + 3 * dx, y + 3 * dy].IsFree)
-                                    {
-                                        if (qual < 3)
-                                        {
-                                            qual = 3;
-                                            move = (x + 3 * dx, y + 3 * dy);
-                                        }
-                                    }
-
-                                    if (board[x - dx, y - dy].IsFree)
-                                    {
-                                        if (qual < 3)
-                                        {
-                                            qual = 3;
+                                            qual = 4;
                                             move = (x - dx, y - dy);
                                         }
                                     }
-                                }
 
-                                if (board[x + 2 * dx, y + 2 * dy].IsFree)
-                                {
-                                    if (qual < 2)
+                                    if (board[x + 3 * dx, y + 3 * dy].IsFree && qual < 3)
                                     {
-                                        qual = 2;
-                                        move = (x + 2 * dx, y + 2 * dy);
+                                        qual = 3;
+                                        move = (x + 3 * dx, y + 3 * dy);
                                     }
-                                }
 
-                                if (board[x - dx, y - dy].IsFree)
-                                {
-                                    if (qual < 2)
+                                    if (board[x - dx, y - dy].IsFree && qual < 3)
                                     {
-                                        qual = 2;
+                                        qual = 3;
                                         move = (x - dx, y - dy);
                                     }
                                 }
-                            }
 
-                            if (board[x + 1 * dx, y + 1 * dy].IsFree)
-                            {
-                                if (qual < 1)
+                                if (board[x + 2 * dx, y + 2 * dy].IsFree && qual < 2)
                                 {
-                                    qual = 1;
-                                    move = (x + 1 * dx, y + 1 * dy);
+                                    qual = 2;
+                                    move = (x + 2 * dx, y + 2 * dy);
                                 }
-                            }
 
-                            if (board[x - dx, y - dy].IsFree)
-                            {
-                                if (qual < 1)
+                                if (board[x - dx, y - dy].IsFree && qual < 2)
                                 {
-                                    qual = 1;
+                                    qual = 2;
                                     move = (x - dx, y - dy);
                                 }
+                            }
+
+                            if (board[x + 1 * dx, y + 1 * dy].IsFree && qual < 1)
+                            {
+                                qual = 1;
+                                move = (x + 1 * dx, y + 1 * dy);
+                            }
+
+                            if (board[x - dx, y - dy].IsFree && qual < 1)
+                            {
+                                qual = 1;
+                                move = (x - dx, y - dy);
                             }
                         }
                         catch (Exception)

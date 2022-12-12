@@ -3,11 +3,11 @@
 namespace JapaneseCheckers.Views;
 
 /// <summary>
-///     Логика взаимодействия для SelectPlayers.xaml
+///     Логика взаимодействия для SelectPlayersWindow.xaml
 /// </summary>
-public partial class SelectPlayers : Window
+public partial class SelectPlayersWindow : Window
 {
-    public SelectPlayers()
+    public SelectPlayersWindow()
     {
         InitializeComponent();
     }

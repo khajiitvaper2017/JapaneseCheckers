@@ -51,6 +51,6 @@ internal class SelectPlayersViewModel : MvvmBase
 
     private void Select(object obj)
     {
-        if (obj is SelectPlayers win) win.DialogResult = true;
+        if (obj is SelectPlayersWindow win) win.DialogResult = true;
     }
 }
